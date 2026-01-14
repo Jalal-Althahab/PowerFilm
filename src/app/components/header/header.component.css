@@ -1,0 +1,267 @@
+/*-----------------------------------*\
+ * #MAIN_HEADER
+\*-----------------------------------*/
+
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-block: 25px;
+  transition: var(--speed-2);
+  z-index: 4;
+}
+
+.main-header.active-header {
+  background: var(--dark-color-4);
+  padding-block: 20px;
+}
+
+.main-header .page-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-tools {
+  display: none;
+}
+
+.nav-toggle-btn {
+  color: var(--white-color);
+  font-size: 40px;
+}
+
+.main-menu {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  background: var(--dark-color-4);
+  width: 100%;
+  max-width: 300px;
+  height: 100%;
+  box-shadow: -1px 0 3px hsla(0, 0%, 0%, 0.2);
+  transition: 0.15s ease-in;
+  visibility: hidden;
+  z-index: 3;
+}
+
+.main-menu.active-menu {
+  right: 0;
+  visibility: visible;
+  transition: 0.25s ease-out;
+}
+
+.menu-header {
+  padding: 30px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-close-btn {
+  color: var(--white-color);
+  font-size: 25px;
+  padding: 5px;
+}
+
+.nav-close-btn ion-icon {
+  --ionicon-stroke-width: 80px;
+}
+
+.menu-list {
+  border-top: 1px solid hsla(0, 0%, 100%, 0.1);
+  margin-bottom: 30px;
+}
+
+.menu-link {
+  color: var(--white-color);
+  font-size: var(--size-8);
+  font-weight: var(--weight-500);
+  padding: 10px 25px;
+  border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
+  transition: var(--speed-1);
+}
+
+.menu-link:hover,
+.menu-link:focus {
+  color: var(--accent-color);
+}
+
+.menu-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.social-icon {
+  font-size: 20px;
+  color: var(--white-color);
+  transition: var(--speed-1);
+}
+
+.social-icon:hover,
+.social-icon:focus {
+  color: var(--accent-color);
+}
+
+.screen-overlay {
+  position: fixed;
+  inset: 0;
+  background: hsla(204, 18%, 11%, 0.8);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+  transition: var(--speed-2);
+}
+
+.screen-overlay.active-overlay {
+  opacity: 1;
+  pointer-events: all;
+}
+
+
+
+
+
+/*-----------------------------------*\
+ * #MEDIA_QUERIES FOR HEADER
+\*-----------------------------------*/
+
+/**
+ * 768px and above - Show header tools
+ */
+
+@media (min-width: 768px) {
+
+  .main-header .page-container {
+    gap: 30px;
+  }
+
+  .header-tools {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    gap: 35px;
+  }
+
+  .header-tools .main-btn {
+    display: none;
+  }
+
+  .search-tool {
+    position: relative;
+    color: var(--white-color);
+  }
+
+  .search-tool ion-icon {
+    --ionicon-stroke-width: 80px;
+  }
+
+  .search-tool::after {
+    content: "";
+    position: absolute;
+    top: 1px;
+    right: -20px;
+    background: hsla(0, 0%, 100%, 0.1);
+    width: 2px;
+    height: 14px;
+  }
+
+  .language-tool {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .language-tool label {
+    color: var(--accent-color);
+    font-size: 20px;
+  }
+
+  .language-tool select {
+    color: var(--white-color);
+    font-size: var(--size-9);
+    font-weight: var(--weight-700);
+  }
+
+  .language-tool option {
+    color: var(--black-color);
+  }
+
+}
+
+
+
+
+
+/**
+ * 992px and above - Show desktop navigation
+ */
+
+@media (min-width: 992px) {
+
+  .main-header.active-header {
+    padding-block: 5px;
+  }
+
+  .nav-toggle-btn,
+  .menu-header,
+  .menu-social {
+    display: none;
+  }
+
+  .main-menu {
+    all: unset;
+    margin-left: auto;
+  }
+
+  .header-tools {
+    order: 1;
+    margin-left: 0;
+  }
+
+  .menu-list {
+    all: unset;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .menu-link {
+    border-bottom: none;
+    font-size: var(--size-9);
+    font-weight: var(--weight-700);
+    text-transform: uppercase;
+    padding: 30px 15px;
+  }
+
+  .screen-overlay {
+    display: none;
+  }
+
+}
+
+
+
+
+
+/**
+ * 1200px and above - Show sign in button
+ */
+
+@media (min-width: 1200px) {
+
+  .main-menu {
+    margin-inline: auto;
+  }
+
+  .header-tools .main-btn {
+    display: block;
+    font-size: 14px;
+    padding: 10px 35px;
+    letter-spacing: 1px;
+  }
+
+}

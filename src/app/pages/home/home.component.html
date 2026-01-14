@@ -1,0 +1,392 @@
+<main>
+  <article>
+
+    <!-- 
+      - #PROMO_SECTION
+    -->
+
+    <section class="promo-section" id="promo-section">
+      <div class="page-container">
+
+        <div class="promo-content">
+
+          <p class="promo-sub">PowerFilm</p>
+
+          <h1 class="main-heading promo-title">
+            Unlimited <strong>Movie</strong>, TVs Shows, & More.
+          </h1>
+
+          <div class="info-box">
+
+            <div class="tag-box">
+              <div class="tag tag-filled">PG 18</div>
+
+              <div class="tag tag-border">HD</div>
+            </div>
+
+            <div class="genre-box">
+              <a href="#">Romance,</a>
+
+              <a href="#">Drama</a>
+            </div>
+
+            <div class="time-box">
+
+              <div>
+                <ion-icon name="calendar-outline"></ion-icon>
+
+                <time datetime="2022">2022</time>
+              </div>
+
+              <div>
+                <ion-icon name="time-outline"></ion-icon>
+
+                <time datetime="PT128M">128 min</time>
+              </div>
+
+            </div>
+
+          </div>
+
+          <button class="btn main-btn">
+            <ion-icon name="play"></ion-icon>
+
+            <span>Watch now</span>
+          </button>
+
+        </div>
+
+      </div>
+    </section>
+
+
+
+
+
+    <!-- 
+      - #NEW_RELEASES
+    -->
+
+    <section class="new-releases" id="new-releases">
+      <div class="page-container">
+
+        <div class="section-top">
+
+          <div class="title-box">
+            <p class="section-desc">Online Streaming</p>
+
+            <h2 class="section-heading">New Releases</h2>
+          </div>
+
+          <ul class="filter-menu">
+
+            <li>
+              <button class="filter-option" (click)="onFilterClick('Movies')">Movies</button>
+            </li>
+
+            <li>
+              <button class="filter-option" (click)="onFilterClick('TV Shows')">TV Shows</button>
+            </li>
+
+            <li>
+              <button class="filter-option" (click)="onFilterClick('Anime')">Anime</button>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <ul class="movie-grid scroll-area">
+
+          <li *ngFor="let movie of newReleases">
+            <div class="film-card">
+
+              <a [routerLink]="['/movie-details', movie.id]">
+                <figure class="card-img">
+                  <img [src]="'assets/images/' + movie.image" [alt]="movie.title + ' movie poster'">
+                </figure>
+              </a>
+
+              <div class="card-title-box">
+                <a [routerLink]="['/movie-details', movie.id]">
+                  <h3 class="film-title">{{movie.title}}</h3>
+                </a>
+
+                <!-- FIX: Use [attr.datetime] instead of [datetime] -->
+                <time [attr.datetime]="movie.year">{{movie.year}}</time>
+              </div>
+
+              <div class="card-meta">
+                <div class="tag tag-border">{{movie.quality}}</div>
+
+                <div class="film-time">
+                  <ion-icon name="time-outline"></ion-icon>
+
+                  <!-- FIX: Use [attr.datetime] instead of [datetime] -->
+                  <time [attr.datetime]="movie.duration">{{movie.duration}}</time>
+                </div>
+
+                <div class="film-rating">
+                  <ion-icon name="star"></ion-icon>
+
+                  <data>{{movie.rating}}</data>
+                </div>
+              </div>
+
+            </div>
+          </li>
+
+        </ul>
+
+      </div>
+    </section>
+
+
+
+
+
+    <!-- 
+      - #FEATURES_SECTION
+    -->
+
+    <section class="features-section" id="features-section">
+      <div class="page-container">
+
+        <div class="features-image">
+          <figure>
+            <img src="assets/images/service-banner.jpg" alt="HD 4k resolution! only $3.99">
+          </figure>
+
+          <a href="assets/images/service-banner.jpg" download class="features-btn">
+            <span>Download</span>
+
+            <ion-icon name="download-outline"></ion-icon>
+          </a>
+        </div>
+
+        <div class="features-info">
+
+          <p class="features-desc">Our Platform</p>
+
+          <h2 class="section-heading features-heading">Download Content for Offline Viewing.</h2>
+
+          <p class="features-text">
+            Our streaming service provides premium entertainment content with high-quality viewing. There are numerous options available for streaming movies and shows, but our platform offers exclusive features and superior user experience compared to others.
+          </p>
+
+          <ul class="features-list">
+
+            <li>
+              <div class="feature-item">
+
+                <div class="item-icon">
+                  <ion-icon name="tv"></ion-icon>
+                </div>
+
+                <div class="item-content">
+                  <h3 class="item-heading">Enjoy on Your TV.</h3>
+
+                  <p class="item-text">
+                    Watch your favorite movies and shows on television with crystal clear picture quality and immersive sound.
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="feature-item">
+
+                <div class="item-icon">
+                  <ion-icon name="videocam"></ion-icon>
+                </div>
+
+                <div class="item-content">
+                  <h3 class="item-heading">Watch Everywhere.</h3>
+
+                  <p class="item-text">
+                    Stream content across all your devices including smartphones, tablets, laptops, and smart TVs.
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </section>
+
+
+
+
+
+    <!-- 
+      - #TOP_MOVIES
+    -->
+
+    <section class="top-movies" id="top-movies">
+      <div class="page-container">
+
+        <p class="section-desc">Online Streaming</p>
+
+        <h2 class="section-heading">Top Rated Movies</h2>
+
+        <ul class="filter-menu">
+
+          <li>
+            <button class="filter-option" (click)="onFilterClick('Movies')">Movies</button>
+          </li>
+
+          <li>
+            <button class="filter-option" (click)="onFilterClick('TV Shows')">TV Shows</button>
+          </li>
+
+          <li>
+            <button class="filter-option" (click)="onFilterClick('Documentary')">Documentary</button>
+          </li>
+
+          <li>
+            <button class="filter-option" (click)="onFilterClick('Sports')">Sports</button>
+          </li>
+
+        </ul>
+
+        <ul class="movie-grid">
+
+          <li *ngFor="let movie of topMovies">
+            <div class="film-card">
+
+              <a [routerLink]="['/movie-details', movie.id]">
+                <figure class="card-img">
+                  <img [src]="'assets/images/' + movie.image" [alt]="movie.title + ' movie poster'">
+                </figure>
+              </a>
+
+              <div class="card-title-box">
+                <a [routerLink]="['/movie-details', movie.id]">
+                  <h3 class="film-title">{{movie.title}}</h3>
+                </a>
+
+                <!-- FIX: Use [attr.datetime] instead of [datetime] -->
+                <time [attr.datetime]="movie.year">{{movie.year}}</time>
+              </div>
+
+              <div class="card-meta">
+                <div class="tag tag-border">{{movie.quality}}</div>
+
+                <div class="film-time">
+                  <ion-icon name="time-outline"></ion-icon>
+
+                  <!-- FIX: Use [attr.datetime] instead of [datetime] -->
+                  <time [attr.datetime]="movie.duration">{{movie.duration}}</time>
+                </div>
+
+                <div class="film-rating">
+                  <ion-icon name="star"></ion-icon>
+
+                  <data>{{movie.rating}}</data>
+                </div>
+              </div>
+
+            </div>
+          </li>
+
+        </ul>
+
+      </div>
+    </section>
+
+
+
+
+
+    <!-- 
+      - #TV_SHOWS
+    -->
+
+    <section class="tv-shows"  id="tv-shows">
+      <div class="page-container">
+
+        <p class="section-desc">Best TV Series</p>
+
+        <h2 class="section-heading">World Best TV Series</h2>
+
+        <ul class="movie-grid">
+
+          <li *ngFor="let series of tvShows">
+            <div class="film-card">
+
+              <a [routerLink]="['/movie-details', series.id]">
+                <figure class="card-img">
+                  <img [src]="'assets/images/' + series.image" [alt]="series.title + ' movie poster'">
+                </figure>
+              </a>
+
+              <div class="card-title-box">
+                <a [routerLink]="['/movie-details', series.id]">
+                  <h3 class="film-title">{{series.title}}</h3>
+                </a>
+
+                <!-- FIX: Use [attr.datetime] instead of [datetime] -->
+                <time [attr.datetime]="series.year">{{series.year}}</time>
+              </div>
+
+              <div class="card-meta">
+                <div class="tag tag-border">{{series.quality}}</div>
+
+                <div class="film-time">
+                  <ion-icon name="time-outline"></ion-icon>
+
+                  <!-- FIX: Use [attr.datetime] instead of [datetime] -->
+                  <time [attr.datetime]="series.duration">{{series.duration}}</time>
+                </div>
+
+                <div class="film-rating">
+                  <ion-icon name="star"></ion-icon>
+
+                  <data>{{series.rating}}</data>
+                </div>
+              </div>
+
+            </div>
+          </li>
+
+        </ul>
+
+      </div>
+    </section>
+
+
+
+
+
+    <!-- 
+      - #OFFER_SECTION
+    -->
+
+    <section class="offer-section" id="offer-section">
+      <div class="page-container">
+
+        <div class="offer-header">
+          <h2 class="offer-title">Free trial begins with 30 days.</h2>
+
+          <p class="offer-text">
+            Enter your email address to start or renew your membership.
+          </p>
+        </div>
+
+        <form class="offer-form" (ngSubmit)="onSubmit()" #offerForm="ngForm">
+          <input type="email" name="email" required placeholder="Enter your email" class="email-input" 
+                 [(ngModel)]="email" #emailInput="ngModel">
+
+          <button type="submit" class="form-btn">Get started</button>
+        </form>
+
+      </div>
+    </section>
+
+  </article>
+</main>

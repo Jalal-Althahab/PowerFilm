@@ -1,0 +1,26 @@
+/*-----------------------------------*\
+ * #TOP_BUTTON
+\*-----------------------------------*/
+
+.top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--accent-color);
+  color: var(--dark-color-4);
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px hsla(0, 0%, 0%, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--speed-2);
+  z-index: 2;
+}
+
+.top-btn.active-btn {
+  opacity: 1;
+  visibility: visible;
+}

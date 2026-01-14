@@ -1,0 +1,180 @@
+<main>
+  <article>
+
+    <!-- Video Player Modal -->
+    <app-video-player 
+      *ngIf="movie"
+      [videoId]="movie.trailerId || ''"
+      [title]="movie.title"
+      [isVisible]="showVideoPlayer"
+      (closeVideo)="closeVideoPlayer()"
+      (watchFullMovie)="watchFullMovie()"
+      (shareTrailer)="shareTrailer()">
+    </app-video-player>
+
+    <!-- 
+      - #DETAILS_PAGE
+    -->
+
+    <section class="details-page" *ngIf="movie">
+      <div class="page-container">
+
+        <figure class="details-image">
+
+          <img [src]="'assets/images/' + movie.image" [alt]="movie.title + ' movie poster'">
+
+          <button class="play-btn" (click)="playMovie()">
+            <ion-icon name="play-circle-outline"></ion-icon>
+          </button>
+
+        </figure>
+
+        <div class="details-content">
+
+          <p class="details-sub">Movie Details</p>
+
+          <h1 class="main-heading details-title">
+            {{getFirstWord(movie.title)}} <strong>{{getRestOfTitle(movie.title)}}</strong>
+          </h1>
+
+          <div class="info-box">
+
+            <div class="tag-box">
+              <div class="tag tag-filled">{{movie.ageRating || 'PG 13'}}</div>
+
+              <div class="tag tag-border">{{movie.quality}}</div>
+            </div>
+
+            <div class="genre-box">
+              <a href="#" *ngFor="let genre of movie.genres; let last = last">
+                {{genre}}{{last ? '' : ','}}
+              </a>
+            </div>
+
+            <div class="time-box">
+
+              <div>
+                <ion-icon name="calendar-outline"></ion-icon>
+
+                <time [attr.datetime]="movie.year">{{movie.year}}</time>
+              </div>
+
+              <div>
+                <ion-icon name="time-outline"></ion-icon>
+
+                <time [attr.datetime]="movie.duration">{{movie.duration}}</time>
+              </div>
+
+            </div>
+
+          </div>
+
+          <p class="story-text">
+            {{movie.description || 'No description available.'}}
+          </p>
+
+          <div class="details-actions">
+
+            <button class="share-action" (click)="shareMovie()">
+              <ion-icon name="share-social"></ion-icon>
+
+              <span>Share</span>
+            </button>
+
+            <div class="platform-info">
+              <p class="platform-name">PowerFilm</p>
+
+              <p class="platform-text">Streaming Channels</p>
+            </div>
+
+            <button class="btn main-btn" (click)="playMovie()">
+              <ion-icon name="play"></ion-icon>
+
+              <span>Watch Trailer</span>
+            </button>
+
+            <button class="btn watch-now-btn" (click)="watchNow()">
+              <ion-icon name="tv"></ion-icon>
+              <span>Watch Now</span>
+            </button>
+
+          </div>
+
+          <a [href]="'assets/images/' + movie.image" [download]="movie.title + '.png'" class="download-action">
+            <span>Download Poster</span>
+
+            <ion-icon name="download-outline"></ion-icon>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Loading or Error Message -->
+    <section class="details-page" *ngIf="!movie">
+      <div class="page-container">
+        <div class="details-content">
+          <h2 class="section-heading">Movie Not Found</h2>
+          <p class="story-text">The movie you're looking for doesn't exist or has been removed.</p>
+          <a routerLink="/" class="btn main-btn">Back to Home</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 
+      - #SIMILAR_CONTENT
+    -->
+
+    <section class="tv-shows" *ngIf="movie && similarContent.length > 0">
+      <div class="page-container">
+
+        <p class="section-desc">Similar Content</p>
+
+        <h2 class="section-heading">You Might Also Like</h2>
+
+        <ul class="movie-grid">
+
+          <li *ngFor="let content of similarContent">
+            <div class="film-card">
+
+              <a (click)="onMovieClick(content.id)" class="movie-link">
+                <figure class="card-img">
+                  <img [src]="'assets/images/' + content.image" [alt]="content.title + ' poster'">
+                </figure>
+              </a>
+
+              <div class="card-title-box">
+                <a (click)="onMovieClick(content.id)" class="movie-link">
+                  <h3 class="film-title">{{content.title}}</h3>
+                </a>
+
+                <time [attr.datetime]="content.year">{{content.year}}</time>
+              </div>
+
+              <div class="card-meta">
+                <div class="tag tag-border">{{content.quality}}</div>
+
+                <div class="film-time">
+                  <ion-icon name="time-outline"></ion-icon>
+
+                  <time [attr.datetime]="content.duration">{{content.duration}}</time>
+                </div>
+
+                <div class="film-rating">
+                  <ion-icon name="star"></ion-icon>
+
+                  <data>{{content.rating}}</data>
+                </div>
+              </div>
+
+            </div>
+          </li>
+
+        </ul>
+
+      </div>
+    </section>
+
+  </article>
+</main>

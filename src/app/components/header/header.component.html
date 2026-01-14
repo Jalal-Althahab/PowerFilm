@@ -1,0 +1,112 @@
+<header class="main-header" [class.active-header]="isHeaderActive">
+  <div class="page-container">
+
+    <div class="screen-overlay" [class.active-overlay]="isMenuOpen" (click)="toggleMenu()"></div>
+
+    <a routerLink="/" class="site-logo" (click)="navigateToHome()">
+      <img src="assets/images/logo.svg" alt="PowerFilm logo">
+    </a>
+
+    <div class="header-tools">
+
+      <button class="search-tool">
+        <ion-icon name="search-outline"></ion-icon>
+      </button>
+
+      <div class="language-tool">
+        <label for="lang-select">
+          <ion-icon name="globe-outline"></ion-icon>
+        </label>
+
+        <select name="lang-select" id="lang-select" (change)="onLanguageChange($event)">
+          <option value="en">EN</option>
+          <option value="au">AU</option>
+          <option value="ar">AR</option>
+          <option value="tu">TU</option>
+        </select>
+      </div>
+
+      <button class="btn main-btn">Sign in</button>
+
+    </div>
+
+    <button class="nav-toggle-btn" (click)="toggleMenu()">
+      <ion-icon name="reorder-two"></ion-icon>
+    </button>
+
+    <nav class="main-menu" [class.active-menu]="isMenuOpen">
+
+      <div class="menu-header">
+
+        <a routerLink="/" class="site-logo" (click)="navigateToHome()">
+          <img src="assets/images/logo.svg" alt="PowerFilm logo">
+        </a>
+
+        <button class="nav-close-btn" (click)="toggleMenu()">
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+
+      </div>
+
+      <ul class="menu-list">
+
+        <li>
+          <a routerLink="/" class="menu-link" (click)="navigateToHome()">Home</a>
+        </li>
+
+        <li>
+          <a href="#" class="menu-link" (click)="navigateToMovies()">Movie</a>
+        </li>
+
+        <li>
+          <a href="#" class="menu-link" (click)="navigateToTvShows()">Tv Show</a>
+        </li>
+
+        <li>
+          <a href="#" class="menu-link" (click)="navigateToNewReleases()">Web Series</a>
+        </li>
+
+        <li>
+          <a href="#" class="menu-link" (click)="navigateToPricing()">Pricing</a>
+        </li>
+
+      </ul>
+
+      <ul class="menu-social">
+
+        <li>
+          <a href="#" class="social-icon">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="social-icon">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="social-icon">
+            <ion-icon name="logo-pinterest"></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="social-icon">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="social-icon">
+            <ion-icon name="logo-youtube"></ion-icon>
+          </a>
+        </li>
+
+      </ul>
+
+    </nav>
+
+  </div>
+</header>

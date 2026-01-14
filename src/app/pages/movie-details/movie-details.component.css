@@ -1,0 +1,304 @@
+/*-----------------------------------*\
+ * #DETAILS_PAGE
+\*-----------------------------------*/
+
+.details-page {
+  background: url("/assets/images/movie-detail-bg.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-top: 160px;
+  padding-bottom: var(--section-space);
+}
+
+.details-image {
+  position: relative;
+  background: var(--metal-color-1);
+  max-width: 300px;
+  margin-inline: auto;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+
+.details-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.play-btn {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 120px;
+  color: var(--white-color);
+  transition: var(--speed-1);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.play-btn:hover {
+  background: hsla(0, 0%, 0%, 0.25);
+}
+
+.details-sub {
+  font-size: var(--size-5);
+  color: var(--accent-color);
+  font-weight: var(--weight-700);
+  margin-bottom: 10px;
+}
+
+.details-title {
+  margin-bottom: 20px;
+}
+
+.details-title strong {
+  color: var(--accent-color);
+}
+
+.details-page .info-box {
+  margin-bottom: 30px;
+}
+
+.story-text {
+  color: var(--gray-color);
+  font-size: var(--size-9);
+  font-weight: var(--weight-500);
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+.details-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px 40px;
+  max-width: 460px;
+  background: var(--metal-color-2);
+  padding: 25px;
+  border: 1px solid var(--dark-gray);
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+
+.details-actions .share-action {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.details-actions .share-action ion-icon {
+  font-size: 25px;
+  color: var(--white-color);
+  margin-inline: auto;
+}
+
+.details-actions .share-action span {
+  color: var(--light-color-2);
+  font-size: var(--size-11);
+  transition: var(--speed-1);
+}
+
+.details-actions .share-action:hover span,
+.details-actions .share-action:focus span {
+  color: var(--accent-color);
+}
+
+.platform-info {
+  text-align: center;
+}
+
+.platform-name {
+  color: var(--white-color);
+  font-weight: var(--weight-700);
+}
+
+.platform-text {
+  font-size: var(--size-11);
+  color: var(--light-color-2);
+}
+
+.details-actions .main-btn {
+  font-size: 10px;
+  padding: 13px 26px;
+  letter-spacing: 0;
+  background: transparent;
+}
+
+.details-actions .main-btn:hover,
+.details-actions .main-btn:focus {
+  background: var(--accent-color);
+}
+
+.download-action {
+  max-width: max-content;
+  background: var(--accent-color);
+  color: var(--dark-color-1);
+  font-size: var(--size-11);
+  font-weight: var(--weight-500);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 35px;
+  letter-spacing: 5px;
+  border-radius: 6px;
+  transition: var(--speed-1);
+}
+
+.download-action:hover {
+  opacity: 0.9;
+}
+
+.download-action ion-icon {
+  font-size: 16px;
+}
+
+/* Movie link styling */
+.movie-link {
+  cursor: pointer;
+  transition: var(--speed-1);
+}
+
+.movie-link:hover {
+  opacity: 0.9;
+}
+
+
+
+
+
+/*-----------------------------------*\
+ * #TV_SHOWS in Movie Details
+\*-----------------------------------*/
+
+.tv-shows {
+  background: url("/assets/images/tv-series-bg.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-block: var(--section-space);
+}
+
+.tv-shows .section-heading {
+  margin-bottom: 50px;
+}
+
+/* TV Shows uses regular grid layout - Mobile first (1 column) */
+.tv-shows .movie-grid {
+  display: grid;
+  gap: 50px;
+  grid-template-columns: 1fr;
+}
+
+
+
+
+
+/*-----------------------------------*\
+ * #MEDIA_QUERIES FOR MOVIE DETAILS
+\*-----------------------------------*/
+
+/**
+ * 550px and above - 2 columns
+ */
+
+@media (min-width: 550px) {
+
+  .tv-shows .movie-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 60px 30px;
+  }
+
+}
+
+
+
+
+
+/**
+ * 992px and above - 3 columns
+ */
+
+@media (min-width: 992px) {
+
+  .tv-shows .movie-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px 30px;
+  }
+
+}
+
+
+
+
+
+/**
+ * 1200px and above - 4 columns
+ */
+
+@media (min-width: 1200px) {
+
+  .tv-shows .movie-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 60px 30px;
+  }
+
+}
+
+/* new styles */
+
+/* Add to existing movie-details.component.css */
+
+.watch-now-btn {
+  background: var(--accent-color);
+  color: var(--dark-color-1);
+  font-size: 10px;
+  padding: 13px 26px;
+  letter-spacing: 0;
+  border: 2px solid var(--accent-color);
+  border-radius: 50px;
+  transition: var(--speed-1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.watch-now-btn:hover {
+  background: #ffd700;
+  transform: translateY(-2px);
+}
+
+.details-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px 40px;
+  max-width: 600px;
+  background: var(--metal-color-2);
+  padding: 25px;
+  border: 1px solid var(--dark-gray);
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+  .details-actions {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .watch-now-btn {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
