@@ -64,9 +64,9 @@
 
 ## 📸 Screenshots
 
-| Home Page | Movie Details | Mobile View | iPad View |
-|-----------|---------------|-------------|-----------|
-| ![Home Page](https://raw.githubusercontent.com/Jalal-Althahab/PowerFilm/main/screenshots/home-desktop.png) | ![Movie Details](https://raw.githubusercontent.com/Jalal-Althahab/PowerFilm/main/screenshots/movie-details.png) | ![Mobile View](https://raw.githubusercontent.com/Jalal-Althahab/PowerFilm/main/screenshots/home-mobile.png) | ![iPad View](https://raw.githubusercontent.com/Jalal-Althahab/PowerFilm/main/screenshots/home-ipad.png) |
+| Home Page | iPad View | Movie Details | Mobile View |
+|-----------|-----------|---------------|-------------|
+| ![Home Page](https://raw.githubusercontent.com/Jalal-Althahab/PowerFilm/main/screenshots/home-desktop.png) | ![iPad View](https://raw.githubusercontent.com/Jalal-Althahab/PowerFilm/main/screenshots/home-ipad.png) | ![Movie Details](https://raw.githubusercontent.com/Jalal-Althahab/PowerFilm/main/screenshots/movie-details.png) | ![Mobile View](https://raw.githubusercontent.com/Jalal-Althahab/PowerFilm/main/screenshots/home-mobile.png) |
 
 
 ## 🛠️ Tech Stack
