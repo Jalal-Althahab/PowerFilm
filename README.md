@@ -7,7 +7,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)](https://www.typescriptlang.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub Stars](https://img.shields.io/github/stars/Jalal-Althahab/PowerFilm?style=social)](https://github.com/Jalal-Althahab/PowerFilm/stargazers)
-[![Live Demo](https://img.shields.io/badge/Live-Demo-green.svg)](https://powerfilm.web.app)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-green.svg)](https://power-film.web.app)
 
 ## 📋 Table of Contents
 - [✨ Features](#-features)
@@ -54,7 +54,7 @@
 
 ## 🚀 Live Demo
 
-🌐 **Live Demo**: [https://powerfilm.web.app](https://powerfilm.web.app)
+🌐 **Live Demo**: [https://power-film.web.app](https://power-film.web.app)
 
 **Try it now!** Experience the PowerFilm streaming platform with:
 - Browse movies and TV shows
@@ -252,7 +252,7 @@ See the [`LICENSE`](LICENSE) file in the repository root for the full text.
 
 - GitHub: [https://github.com/Jalal-Althahab](https://github.com/Jalal-Althahab)
 - Project Link: [https://github.com/Jalal-Althahab/PowerFilm](https://github.com/Jalal-Althahab/PowerFilm)
-- Live Demo: [https://powerfilm.web.app](https://powerfilm.web.app)
+- Live Demo: [https://power-film.web.app](https://power-film.web.app)
 
 ### ⭐ Support the Project
 If you find this project useful, please give it a star! ⭐
